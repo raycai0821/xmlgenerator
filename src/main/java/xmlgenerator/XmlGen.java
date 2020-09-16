@@ -4,15 +4,10 @@ package xmlgenerator;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
-import org.dom4j.io.OutputFormat;
-import org.dom4j.io.XMLWriter;
 import utils.DateUtile;
 import utils.FileUtile;
 import utils.RandomNumUtile;
 import utils.RandomSeq;
-
-import javax.sql.rowset.spi.XmlWriter;
-import java.io.*;
 
 
 /**

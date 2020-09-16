@@ -5,10 +5,7 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.UnsupportedEncodingException;
-import java.text.Format;
 
 /**
  * @author leifeng.cai
@@ -44,7 +41,7 @@ public class FileUtile {
 
     private static File createFile(){
         String path = "D:\\job\\xml\\";
-        String filename = String.valueOf(System.currentTimeMillis());
+        String filename = String.valueOf(DateUtile.getSimpleDateFormat());
         StringBuffer filePath = new StringBuffer();
         filePath.append(path);
         filePath.append(filename);
