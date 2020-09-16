@@ -24,13 +24,13 @@ public class DateUtile {
         return DateFormat.getDateInstance().format(new Date());
     }
     /*
-    * yyyy-MM-ddTHH:mm:ss
+    * @decp yyyy-MM-ddTHH:mm:ss
     * */
 
     public String getFormateDate() {
-        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new Date());
     }
-
+//
 //    @Test
 //    public void testGetFormateDate() {
 //        System.out.println(new DateUtile().getFormateDate());
