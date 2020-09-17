@@ -47,11 +47,11 @@ public class CsvGen {
 
         return rowContent;
     }
-
-    @Test
-    public void genCSV(){
-        FileUtile.csvWriter(CsvHeaderHelper.genCsvHeader(CsvHeadsDto.class),setContents(),".csv");
-    }
+//
+//    @Test
+//    public void genCSV(){
+//        FileUtile.csvWriter(CsvHeaderHelper.genCsvHeader(CsvHeadsDto.class),setContents(),".csv");
+//    }
 
 }
 

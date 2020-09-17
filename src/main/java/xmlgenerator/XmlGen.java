@@ -17,16 +17,14 @@ public class XmlGen {
 
     private static double sum = 0.00;
     private static int count = 0;
+    Document document = DocumentHelper.createDocument();
 
     public static void main(String[] args) {
-        new XmlGen().genXml();
+        new XmlGen().genFileResponseXml();
     }
 
-    public void genXml() {
+    public void genRequestXml() {
 
-
-        // 1、创建document对象
-        Document document = DocumentHelper.createDocument();
         //创建根节点
         Element root = document.addElement("Document");
         root.setText("xmlns=\"urn:iso:std:iso:20022:tech:xsd:pain.001.001.03\"");
@@ -122,6 +120,71 @@ public class XmlGen {
         GrpHdr_CtrlSum.setText(String.valueOf(sum));
 
         new FileUtile().xmlWriter(document,".xml");
+
+    }
+
+    public void genFileResponseXml(){
+
+        Element Document = document.addElement("Document");
+        Document.setText("xmlns=\"urn:iso:std:iso:20022:tech:xsd:pain.001.001.03\"");
+        Element CstmrPmtStsRpt = Document.addElement("CstmrPmtStsRpt");
+        Element GrpHdr = CstmrPmtStsRpt.addElement("GrpHdr");
+        Element MsgId = GrpHdr.addElement("MsgId");
+        Element CreDtTm = GrpHdr.addElement("CreDtTm");
+        Element InitgPty = GrpHdr.addElement("InitgPty");
+        Element Id = InitgPty.addElement("Id");
+        Element OrgId = Id.addElement("OrgId");
+        Element BICOrBEI = OrgId.addElement("BICOrBEI");
+        BICOrBEI.setText("CITIUS33");
+
+        Element OrgnlGrpInfAndSts = Document.addElement("OrgnlGrpInfAndSts");
+        Element OrgnlMsgId = OrgnlGrpInfAndSts.addElement("OrgnlMsgId");
+        Element OrgnlMsgNmId = OrgnlGrpInfAndSts.addElement("OrgnlMsgNmId");
+        Element OrgnlCreDtTm = OrgnlGrpInfAndSts.addElement("OrgnlCreDtTm");
+        Element OrgnlNbOfTxs = OrgnlGrpInfAndSts.addElement("OrgnlNbOfTxs");
+        Element OrgnlCtrlSum = OrgnlGrpInfAndSts.addElement("OrgnlCtrlSum");
+        Element GrpSts = OrgnlGrpInfAndSts.addElement("GrpSts");
+        Element StsRsnInf = OrgnlGrpInfAndSts.addElement("StsRsnInf");
+        Element AddtlInf = StsRsnInf.addElement("AddtlInf");
+
+        new FileUtile().xmlWriter(document,".xml");
+
+    }
+
+    public void genTxnResponseXml(){
+
+        Element Document = document.addElement("Document");
+        Document.setText("xmlns=\"urn:iso:std:iso:20022:tech:xsd:pain.001.001.03\"");
+        Element CstmrPmtStsRpt = Document.addElement("CstmrPmtStsRpt");
+        Element GrpHdr = CstmrPmtStsRpt.addElement("GrpHdr");
+        Element MsgId = GrpHdr.addElement("MsgId");
+        Element CreDtTm = GrpHdr.addElement("CreDtTm");
+        Element InitgPty = GrpHdr.addElement("InitgPty");
+        Element Id = InitgPty.addElement("Id");
+        Element OrgId = Id.addElement("OrgId");
+        Element BICOrBEI = OrgId.addElement("BICOrBEI");
+        BICOrBEI.setText("CITIUS33");
+        Element OrgnlGrpInfAndSts = Document.addElement("OrgnlGrpInfAndSts");
+        Element OrgnlMsgId = OrgnlGrpInfAndSts.addElement("OrgnlMsgId");
+        Element OrgnlMsgNmId = OrgnlGrpInfAndSts.addElement("OrgnlMsgNmId");
+        Element OrgnlCreDtTm = OrgnlGrpInfAndSts.addElement("OrgnlCreDtTm");
+        Element OrgnlPmtInfAndSts = CstmrPmtStsRpt.addElement("OrgnlPmtInfAndSts");
+        Element OrgnlPmtInfId = OrgnlPmtInfAndSts.addElement("OrgnlPmtInfId");
+        Element TxInfAndSts = OrgnlPmtInfAndSts.addElement("TxInfAndSts");
+        Element OrgnlInstrId = TxInfAndSts.addElement("OrgnlInstrId");
+        Element OrgnlEndToEndId = TxInfAndSts.addElement("OrgnlEndToEndId");
+        Element TxSts = TxInfAndSts.addElement("TxSts");
+        Element StsRsnInf = TxInfAndSts.addElement("StsRsnInf");
+        Element Orgtr = StsRsnInf.addElement("Orgtr");
+        Element Nm = Orgtr.addElement("Nm");
+        Element Rsn = StsRsnInf.addElement("Rsn");
+        Element Cd = Rsn.addElement("Cd");
+        Element AddtlInfOne = StsRsnInf.addElement("AddtlInf");
+        Element AddtlInfTwo = StsRsnInf.addElement("AddtlInf");
+        Element AddtlInfThree = StsRsnInf.addElement("AddtlInf");
+
+        new FileUtile().xmlWriter(document,".xml");
+
 
 
     }
