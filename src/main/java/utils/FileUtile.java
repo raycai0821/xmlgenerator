@@ -4,17 +4,22 @@ import org.dom4j.Document;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
-import java.io.File;
-import java.io.FileOutputStream;
+
+import java.io.*;
+import java.util.List;
 
 /**
  * @author leifeng.cai
  **/
 public class FileUtile {
 
-    public void xmlWriter(Document document){
+    /*
+     * xml文件生成
+     * */
+
+    public void xmlWriter(Document document, String fileType) {
         try {
-            XMLWriter xmlWriter = new XMLWriter(new FileOutputStream(createFile()), xmlFormat());
+            XMLWriter xmlWriter = new XMLWriter(new FileOutputStream(createFile(fileType)), xmlFormat());
             xmlWriter.setEscapeText(false);
             xmlWriter.write(document);
             xmlWriter.close();
@@ -24,10 +29,37 @@ public class FileUtile {
         }
 
     }
+
+    public static void csvWriter(String head, List<String> content, String fileType) {
+        BufferedWriter csvWtriter = null;
+        try {
+            csvWtriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(createFile(fileType))));
+            csvWtriter.write( head);
+            csvWtriter.newLine();
+
+            for (int i = 0; i < content.size(); i++) {
+
+                csvWtriter.write(content.get(i));
+                csvWtriter.newLine();
+            }
+            csvWtriter.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                csvWtriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+
     /*
      * 自定义XML样式
      * */
-    private static OutputFormat xmlFormat(){
+    private static OutputFormat xmlFormat() {
 
         OutputFormat format = new OutputFormat();
         format.setIndent(true); // 行缩进
@@ -39,13 +71,13 @@ public class FileUtile {
         return format;
     }
 
-    private static File createFile(){
+    private static File createFile(String fileType) {
         String path = "D:\\job\\xml\\";
         String filename = String.valueOf(DateUtile.getSimpleDateFormat());
         StringBuffer filePath = new StringBuffer();
         filePath.append(path);
         filePath.append(filename);
-        filePath.append(".xml");
+        filePath.append(fileType);
         System.out.println(filePath);
         return new File(String.valueOf(filePath));
     }

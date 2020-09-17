@@ -121,7 +121,7 @@ public class XmlGen {
         Element GrpHdr_CtrlSum = GrpHdr.addElement("CtrlSum");
         GrpHdr_CtrlSum.setText(String.valueOf(sum));
 
-        new FileUtile().xmlWriter(document);
+        new FileUtile().xmlWriter(document,".xml");
 
 
     }
