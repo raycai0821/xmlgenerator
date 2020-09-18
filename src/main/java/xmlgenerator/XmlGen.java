@@ -20,10 +20,10 @@ public class XmlGen {
     Document document = DocumentHelper.createDocument();
 
     public static void main(String[] args) {
-        new XmlGen().genFileResponseXml();
+        new XmlGen().genRequestXml(10000);
     }
 
-    public void genRequestXml() {
+    public void genRequestXml(int quantity) {
 
         //创建根节点
         Element root = document.addElement("Document");
@@ -47,7 +47,7 @@ public class XmlGen {
         /*
          * 创建CstmrCdtTrfInitn的第二个子节点PmtInf
          * */
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < quantity; i++) {
             double randomAmt = RandomNumUtile.getRandomNum().doubleValue();
             sum += randomAmt;
             Element PmtInf = CstmrCdtTrfInitn.addElement("PmtInf");
