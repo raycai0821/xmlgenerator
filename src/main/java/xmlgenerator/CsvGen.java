@@ -18,7 +18,7 @@ public class CsvGen {
     private static List<String> setContents() {
 
         CsvHeadsDto csvHeadsDto = new CsvHeadsDto();
-        List<String> rowContent = new ArrayList<String>();
+        List<String> rowContent = new ArrayList<>();
         for (int i = 0; i < 2; i++) {
             csvHeadsDto.setDebtorReference("1");
             csvHeadsDto.setDebtorMemberCode("1");
@@ -47,11 +47,11 @@ public class CsvGen {
 
         return rowContent;
     }
-//
-//    @Test
-//    public void genCSV(){
-//        FileUtile.csvWriter(CsvHeaderHelper.genCsvHeader(CsvHeadsDto.class),setContents(),".csv");
-//    }
+
+    @Test
+    public void genCSV(){
+        FileUtile.csvWriter(CsvHeaderHelper.genCsvHeader(CsvHeadsDto.class),setContents(),".csv");
+    }
 
 }
 

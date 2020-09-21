@@ -21,6 +21,10 @@ public class CsvHeaderHelper {
         Field[] fields = cls.getDeclaredFields();
         String[] heads = new String[fields.length];
         for (int i =0; i < fields.length; i++){
+            //截取地址属性名字，最终文件中字段名保持一致
+            if (fields[i].getName().contains("reditorBankAddressLine")){
+                heads[i] = "reditorBankAddressLine";
+            }else
             heads[i] = fields[i].getName();
 
         }
