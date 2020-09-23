@@ -10,29 +10,29 @@ import java.util.Date;
  * @author leifeng.cai
  **/
 public class DateUtile {
-    /*
-     *@description 毫秒1600235962463
-     * */
+    /**
+     *日期格式 毫秒1600235962463
+      */
     public static String getTimeStamp() {
         return String.valueOf(System.currentTimeMillis());
     }
 
-    /*
-     * 2007-3-3
-     * */
+    /**
+     *日期格式 yyyyMMdd
+     */
     public static String getDate() {
-        return DateFormat.getDateInstance().format(new Date());
+        return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
-    /*
-     * @description yyyy-MM-ddTHH:mm:ss
-     * */
+    /**
+     * 日期格式 yyyy-MM-ddTHH:mm:ss
+     */
 
     public static String getFormateDate() {
         return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new Date());
     }
-    /*
-     * @description 20200916152948
-     * */
+    /**
+     *  日期格式：yyyyMMddHHmmss
+      */
 
     public static String getSimpleDateFormat() {
         return new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());

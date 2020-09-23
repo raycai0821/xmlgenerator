@@ -9,6 +9,8 @@ import utils.FileUtile;
 import utils.RandomNumUtile;
 import utils.RandomSeq;
 
+import java.lang.annotation.Documented;
+
 
 /**
  * @author leifeng.cai
@@ -40,9 +42,10 @@ public class XmlGen {
          * GrpHdr下的子节点
          *         * */
         Element msgId = GrpHdr.addElement("MsgId");
-        msgId.setText("20170321CB0000000");
+        msgId.setText(RandomSeq.getRandmSeq());
+
         Element creDtTm = GrpHdr.addElement("CreDtTm");
-        creDtTm.setText(new DateUtile().getFormateDate());
+        creDtTm.setText(DateUtile.getDate());
         Element initgPty = GrpHdr.addElement("InitgPty");
         /*
          * 创建CstmrCdtTrfInitn的第二个子节点PmtInf
