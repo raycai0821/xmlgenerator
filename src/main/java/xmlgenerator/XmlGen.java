@@ -22,14 +22,14 @@ public class XmlGen {
     Document document = DocumentHelper.createDocument();
 
     public static void main(String[] args) {
-        new XmlGen().genRequestXml(10000);
+        new XmlGen().genRequestXml(2);
     }
 
     public void genRequestXml(int quantity) {
 
         //创建根节点
-        Element root = document.addElement("Document");
-        root.setText("xmlns=\"urn:iso:std:iso:20022:tech:xsd:pain.001.001.03\"");
+        Element root = document.addElement("Document","urn:iso:std:iso:20022:tech:xsd:pain.002.001.03");
+        root.addNamespace("xsi","urn:iso:std:iso:20022:tech:xsd:pain.001.001.03");
         /*
          * 创建第一个子节点 CstmrCdtTrfInitn;
          * */
