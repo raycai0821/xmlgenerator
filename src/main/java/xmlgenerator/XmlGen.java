@@ -74,7 +74,7 @@ public class XmlGen {
             Element DbtrAcct = PmtTpInf.addElement("DbtrAcct");
             Element Id = DbtrAcct.addElement("Id");
             Element Othr = Id.addElement("Othr");
-            Element Othr_Id = Id.addElement("Id");
+            Element Othr_Id = Othr.addElement("Id");
             Othr_Id.setText("1234567890");
             Element DbtrAgt = PmtInf.addElement("PmtInf");
             Element FinInstnId = DbtrAgt.addElement("FinInstnId");
