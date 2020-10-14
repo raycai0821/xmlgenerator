@@ -2,8 +2,7 @@ package xmlgenerator;
 
 import entity.CsvHeadsDto;
 import org.junit.Test;
-import utils.CsvHeaderHelper;
-import utils.FileUtile;
+import utils.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,26 +19,26 @@ public class CsvGen {
         CsvHeadsDto csvHeadsDto = new CsvHeadsDto();
         List<String> rowContent = new ArrayList<>();
         for (int i = 0; i < 2; i++) {
-            csvHeadsDto.setDebtorReference("1");
+            csvHeadsDto.setDebtorReference(RandomSeq.getRandmSeq());
             csvHeadsDto.setDebtorMemberCode("1");
-            csvHeadsDto.setCurrency("1");
-            csvHeadsDto.setAmount("1");
+            csvHeadsDto.setCurrency("USD");
+            csvHeadsDto.setAmount(String.valueOf(RandomNumUtile.getRandomNum()));
             csvHeadsDto.setPurpose("1");
-            csvHeadsDto.setRequestedExecutionDate("1");
-            csvHeadsDto.setCreditorIdType("4");
-            csvHeadsDto.setCreditorId("4");
-            csvHeadsDto.setCreditorName("4");
-            csvHeadsDto.setCreditorAccountNumber("3");
-            csvHeadsDto.setCreditorIban("2");
-            csvHeadsDto.setCreditorBankIdentificationCode("3");
-            csvHeadsDto.setClearingSystemId("1");
+            csvHeadsDto.setRequestedExecutionDate(DateUtile.getDate());
+            csvHeadsDto.setCreditorIdType("");
+            csvHeadsDto.setCreditorId("");
+            csvHeadsDto.setCreditorName("raytest");
+            csvHeadsDto.setCreditorAccountNumber("123456789012345");
+            csvHeadsDto.setCreditorIban("");
+            csvHeadsDto.setCreditorBankIdentificationCode("CITIHKHX");
+            csvHeadsDto.setClearingSystemId("UK Domestic Sort Code");
             csvHeadsDto.setClearingSystemNumber("4");
-            csvHeadsDto.setCreditorBankName("4");
-            csvHeadsDto.setCreditorBankCountry("4");
-            csvHeadsDto.setCreditorBankAddressLineOne("4");
-            csvHeadsDto.setCreditorBankAddressLineTwo("4");
-            csvHeadsDto.setCreditorBankAddressLineThree("4");
-            csvHeadsDto.setRemittanceInformation("4");
+            csvHeadsDto.setCreditorBankName("BANKTEST");
+            csvHeadsDto.setCreditorBankCountry("HK");
+            csvHeadsDto.setCreditorBankAddressLineOne("ADDRESSONE");
+            csvHeadsDto.setCreditorBankAddressLineTwo("ADDRESSONETWO");
+            csvHeadsDto.setCreditorBankAddressLineThree("ADDRESSTHREE");
+            csvHeadsDto.setRemittanceInformation("RATESTINFO");
 
             rowContent.add(csvHeadsDto.toRow());
 

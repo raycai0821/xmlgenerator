@@ -70,10 +70,12 @@ public class FileUtile {
         format.setNewLineAfterDeclaration(false);
         return format;
     }
-
+    /**
+     * 根据传参决定生成的文件格式
+    */
     private static File createFile(String fileType) {
         String path = "D:\\job\\xml\\";
-        String filename = String.valueOf(DateUtile.getSimpleDateFormat());
+        String filename = DateUtile.getSimpleDateFormat();
         StringBuffer filePath = new StringBuffer();
         filePath.append(path);
         filePath.append(filename);
