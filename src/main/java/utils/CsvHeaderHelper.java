@@ -24,6 +24,8 @@ public class CsvHeaderHelper {
             //截取地址属性名字，最终文件中字段名保持一致
             if (fields[i].getName().contains("reditorBankAddressLine")){
                 heads[i] = "reditorBankAddressLine";
+            }else if (fields[i].getName().contains("CreditorAddressLine")){
+                heads[i] = "creditorAddressLine";
             }else
             heads[i] = fields[i].getName();
 

@@ -9,7 +9,7 @@ import lombok.Data;
  **/
 
 @Data
-public class CsvHeadsDto {
+public class CsvHeadsEntity{
 
     private String debtorReference;
 
