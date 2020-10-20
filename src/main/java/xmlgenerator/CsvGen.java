@@ -48,8 +48,8 @@ public class CsvGen {
     }
 
     @Test
-    public void genCSV(){
-        FileUtile.csvWriter(CsvHeaderHelper.genCsvHeader(CsvHeadsDto.class),setContents(),".csv");
+    public void genCSV() {
+        FileUtile.csvWriter(CsvHeaderHelper.genCsvHeader(CsvHeadsDto.class), setContents(), ".csv");
     }
 
 }

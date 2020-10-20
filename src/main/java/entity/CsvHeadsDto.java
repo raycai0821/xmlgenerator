@@ -9,7 +9,7 @@ import lombok.Data;
  **/
 
 @Data
-public class CsvHeadsDto  {
+public class CsvHeadsDto {
 
     private String debtorReference;
 
@@ -49,14 +49,20 @@ public class CsvHeadsDto  {
 
     private String creditorBankAddressLineThree;
 
+    private String CreditorAddressLineOne;
+
+    private String CreditorAddressLineTwo;
+
+    private String CreditorAddressLineThree;
+
     private String remittanceInformation;
 
 
     public String toRow() {
-        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", this.debtorReference, this.debtorMemberCode,
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", this.debtorReference, this.debtorMemberCode,
                 this.currency, this.amount, this.purpose, this.requestedExecutionDate, this.creditorIdType, this.creditorId, this.creditorName,
                 this.creditorAccountNumber, this.creditorIban, this.creditorBankIdentificationCode, this.clearingSystemId, this.clearingSystemNumber,
                 this.creditorBankName, this.creditorBankCountry, this.creditorBankAddressLineOne, this.creditorBankAddressLineTwo,
-                this.creditorBankAddressLineThree, this.remittanceInformation);
+                this.creditorBankAddressLineThree, this.CreditorAddressLineOne, this.CreditorAddressLineThree, this.CreditorAddressLineThree, this.remittanceInformation);
     }
 }
