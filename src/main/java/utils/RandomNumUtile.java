@@ -13,7 +13,7 @@ public class RandomNumUtile {
       /*
       * 随机double类型乘以随机int类型
       * */
-        return new BigDecimal(random.nextDouble() * random.nextInt(10000)).setScale(2, RoundingMode.HALF_UP);
+        return new BigDecimal(random.nextInt(10000000)).setScale(0, RoundingMode.HALF_UP);
     }
 
 //    @Test

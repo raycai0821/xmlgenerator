@@ -18,10 +18,10 @@ public class DateUtile {
     }
 
     /**
-     *日期格式 yyyy-MM-dd
+     *日期格式 yyyy/MM/dd
      */
     public static String getDate() {
-        return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        return new SimpleDateFormat("yyyy/MM/dd").format(new Date());
     }
     /**
      * 日期格式 yyyy-MM-ddTHH:mm:ss

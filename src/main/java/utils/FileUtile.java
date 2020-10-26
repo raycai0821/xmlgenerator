@@ -75,7 +75,8 @@ public class FileUtile {
     */
     private static File createFile(String fileType) {
         String path = "D:\\job\\xml\\";
-        String filename = DateUtile.getSimpleDateFormat();
+//        String filename = DateUtile.getSimpleDateFormat();
+        String filename = "raytestcsv";
         StringBuffer filePath = new StringBuffer();
         filePath.append(path);
         filePath.append(filename);
