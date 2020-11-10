@@ -18,30 +18,38 @@ public class CsvGen {
 
         CsvHeadsEntity csvHeadsEntity = new CsvHeadsEntity();
         List<String> rowContent = new ArrayList<>();
-        for (int i = 0; i < 2; i++) {
+        for (int i = 1; i < 4; i++) {
             csvHeadsEntity.setDebtorReference(RandomSeq.getRandmSeq());
-            csvHeadsEntity.setDebtorMemberCode("1");
-            csvHeadsEntity.setCurrency("USD");
+            csvHeadsEntity.setDebtorMemberCode("memberCode11123");
+            if(1==0) {
+                csvHeadsEntity.setCurrency("GBP");
+                csvHeadsEntity.setCreditorBankCountry("GB");
+                csvHeadsEntity.setPurpose("VAT");
+            }else {
+                csvHeadsEntity.setCurrency("GBP");
+                csvHeadsEntity.setCreditorBankCountry("GB");
+                csvHeadsEntity.setPurpose("TRANSFER TO OWN ACCOUNT");
+            }
             csvHeadsEntity.setAmount(String.valueOf(RandomNumUtile.getRandomNum()));
-            csvHeadsEntity.setPurpose("VAT");
+
             csvHeadsEntity.setRequestedExecutionDate(DateUtile.getDate());
             csvHeadsEntity.setCreditorIdType("");
             csvHeadsEntity.setCreditorId("");
             csvHeadsEntity.setCreditorName("raytest");
-            csvHeadsEntity.setCreditorAccountNumber("123456789012345");
-            csvHeadsEntity.setCreditorIban("");
+            csvHeadsEntity.setCreditorAccountNumber("DK4789000049910549");
+            csvHeadsEntity.setCreditorIBAN("DK4789000049910549");
             csvHeadsEntity.setCreditorBankIdentificationCode("CITIHKHX");
             csvHeadsEntity.setClearingSystemType("GBDSC");
-            csvHeadsEntity.setClearingSystemNumber("4");
-            csvHeadsEntity.setCreditorBankName("BANKTEST");
+            csvHeadsEntity.setClearingSystemNumber("031100209");
+            csvHeadsEntity.setCreditorBankName("raytestbank");
             csvHeadsEntity.setCreditorBankCountry("HK");
             csvHeadsEntity.setCreditorBankAddressLineOne("ADDRESSONE");
-            csvHeadsEntity.setCreditorBankAddressLineTwo("ADDRESSTWO");
-            csvHeadsEntity.setCreditorBankAddressLineThree("ADDRESSTHREE");
+            csvHeadsEntity.setCreditorBankAddressLineTwo("");
+            csvHeadsEntity.setCreditorBankAddressLineThree("");
             csvHeadsEntity.setCreditorAddressLineOne("CreditorAddressLineOne");
-            csvHeadsEntity.setCreditorAddressLineTwo("CreditorAddressLineTwo");
-            csvHeadsEntity.setCreditorAddressLineThree("CreditorAddressLineThree");
-            csvHeadsEntity.setRemittanceInformation("RATESTINFO");
+            csvHeadsEntity.setCreditorAddressLineTwo("");
+            csvHeadsEntity.setCreditorAddressLineThree("");
+            csvHeadsEntity.setRemittanceInformation("remitinfo");
             rowContent.add(csvHeadsEntity.toRow());
         }
         return rowContent;

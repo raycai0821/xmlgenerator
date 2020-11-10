@@ -31,7 +31,7 @@ public class CsvHeadsEntity{
 
     private String creditorAccountNumber;
 
-    private String creditorIban;
+    private String creditorIBAN;
 
     private String creditorBankIdentificationCode;
 
@@ -61,7 +61,7 @@ public class CsvHeadsEntity{
     public String toRow() {
         return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", this.debtorReference, this.debtorMemberCode,
                 this.currency, this.amount, this.purpose, this.requestedExecutionDate, this.creditorIdType, this.creditorId, this.creditorName,
-                this.creditorAccountNumber, this.creditorIban, this.creditorBankIdentificationCode, this.clearingSystemType, this.clearingSystemNumber,
+                this.creditorAccountNumber, this.creditorIBAN, this.creditorBankIdentificationCode, this.clearingSystemType, this.clearingSystemNumber,
                 this.creditorBankName, this.creditorBankCountry, this.creditorBankAddressLineOne, this.creditorBankAddressLineTwo,
                 this.creditorBankAddressLineThree, this.CreditorAddressLineOne, this.CreditorAddressLineTwo, this.CreditorAddressLineThree, this.remittanceInformation);
     }
