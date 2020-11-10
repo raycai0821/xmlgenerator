@@ -49,7 +49,9 @@ public class CsvGen {
             csvHeadsEntity.setCreditorAddressLineOne("CreditorAddressLineOne");
             csvHeadsEntity.setCreditorAddressLineTwo("");
             csvHeadsEntity.setCreditorAddressLineThree("");
-            csvHeadsEntity.setRemittanceInformation("remitinfo");
+            csvHeadsEntity.setRemittanceInformationLineOne("remitinfo1");
+            csvHeadsEntity.setRemittanceInformationLineTwo("remitinfo2");
+            csvHeadsEntity.setRemittanceInformationLineThree("remitinfo3");
             rowContent.add(csvHeadsEntity.toRow());
         }
         return rowContent;
